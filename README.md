@@ -24,7 +24,7 @@ App en Kotlin Demostrando flujo basico entre fragments
 
 ## 05 - AppWidgetCodeLab - Java
 
-![Foto](00-docs/img/05.png)
+![App Widget Screenshot](00-docs/img/05.png)
 
 
 [Codelab de Google  - App Widgets](https://codelabs.developers.google.com/codelabs/advanced-android-training-widgets/)
@@ -32,6 +32,12 @@ App en Kotlin Demostrando flujo basico entre fragments
 
 ## 06 - AppWidgetCodeLab - Kotlin
 
-![Foto](00-docs/img/06.png)
+![App Widget Screenshot](00-docs/img/06.png)
 
 [Codelab de Google - App Widgets](https://codelabs.developers.google.com/codelabs/advanced-android-training-widgets/)
+
+
+# Colaboradores
+
+- Gonzalo Cirilo - [Github](https://github.com/GonzaloCirilo)
+
