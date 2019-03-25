@@ -21,6 +21,7 @@ import android.view.*
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 
 /**
  * Fragment used to show how to navigate to another destination
