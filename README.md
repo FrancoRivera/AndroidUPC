@@ -6,25 +6,32 @@ UPC
 
 # Proyectos
 
-01 - Rest Countries 
+## 01 - Rest Countries 
 
 Lista los paises de RestCountries API
 
-02 - Sample App 
+## 02 - Sample App 
 
 App vacia explicando las partes en Kotlin
 
-03 - Nav Sample 
+## 03 - Nav Sample 
 
 App en Kotlin Demostrando flujo basico entre fragments
 
-04 - NavigationCodeLab
+## 04 - NavigationCodeLab
 
-Tarea de Codelab de Google
+[Tarea de Codelab de Google](https://codelabs.developers.google.com/codelabs/android-navigation/)
 
-https://codelabs.developers.google.com/codelabs/android-navigation/
+## 05 - AppWidgetCodeLab - Java
+
+![Foto](00-docs/img/05.png)
 
 
+[Codelab de Google  - App Widgets](https://codelabs.developers.google.com/codelabs/advanced-android-training-widgets/)
 
 
+## 06 - AppWidgetCodeLab - Kotlin
 
+![Foto](00-docs/img/06.png)
+
+[Codelab de Google - App Widgets](https://codelabs.developers.google.com/codelabs/advanced-android-training-widgets/)
