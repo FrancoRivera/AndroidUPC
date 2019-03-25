@@ -64,13 +64,7 @@
         </action>
     </fragment>
 
-    <!-- TODO STEP 4 Create a new navigation destination pointing to SettingsFragment -->
-    <!--<fragment-->
-        <!--android:id="@+id/settings_dest"-->
-        <!--android:name="com.example.android.codelabs.navigation.SettingsFragment"-->
-        <!--android:label="@string/settings"-->
-        <!--tools:layout="@layout/settings_fragment" />-->
-    <!-- TODO END STEP 4 -->
+
 
     <fragment
         android:id="@+id/deeplink_dest"
@@ -87,4 +81,16 @@
 
         <!-- TODO END STEP 12.1 -->
     </fragment>
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.example.android.codelabs.navigation.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
+    <!-- TODO STEP 4 Create a new navigation destination pointing to SettingsFragment -->
+    <!--<fragment-->
+    <!--android:id="@+id/settings_dest"-->
+    <!--android:name="com.example.android.codelabs.navigation.SettingsFragment"-->
+    <!--android:label="@string/settings"-->
+    <!--tools:layout="@layout/settings_fragment" />-->
+    <!-- TODO END STEP 4 -->
 </navigation>
