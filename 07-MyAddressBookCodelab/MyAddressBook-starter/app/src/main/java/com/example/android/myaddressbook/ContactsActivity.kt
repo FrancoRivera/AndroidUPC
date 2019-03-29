@@ -40,8 +40,13 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_contacts.*
+import kotlinx.android.synthetic.main.content_contacts.*
 
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.contact_list_item.*
+import kotlinx.android.synthetic.main.contact_list_item.view.*
+import kotlinx.android.synthetic.main.input_contact_dialog.view.*
 
 import org.json.JSONArray
 import org.json.JSONException
@@ -69,9 +74,6 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contacts)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        val fab = findViewById<FloatingActionButton>(R.id.fab)
-
         mPrefs = getPreferences(Context.MODE_PRIVATE)
         mContacts = loadContacts()
         mAdapter = ContactsAdapter(mContacts)
@@ -88,11 +90,8 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
      */
     private fun loadContacts(): ArrayList<Contact> {
         val contactSet = mPrefs.getStringSet(CONTACT_KEY, HashSet())
-        val contacts = ArrayList<Contact>()
-        for (contactString in contactSet) {
-            contacts.add(Gson().fromJson(contactString, Contact::class.java))
-        }
-        return contacts
+        return contactSet.mapTo(ArrayList()) { Gson()
+                .fromJson(it, Contact::class.java) }
     }
 
     /**
@@ -101,10 +100,9 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
     private fun saveContacts() {
         val editor = mPrefs.edit()
         editor.clear()
-        val contactSet = HashSet<String>()
-        for (contact in mContacts) {
-            contactSet.add(Gson().toJson(contact))
-        }
+        val contactSet = mContacts
+                .map { Gson().toJson(it) }
+                .toSet()
         editor.putStringSet(CONTACT_KEY, contactSet)
         editor.apply()
     }
@@ -113,10 +111,9 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
      * Sets up the RecyclerView: empty data set, item dividers, swipe to delete.
      */
     private fun setupRecyclerView() {
-        val recyclerView = findViewById<RecyclerView>(R.id.contact_list)
 
-        recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        recyclerView.adapter = mAdapter
+        contact_list.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        contact_list.adapter = mAdapter
 
         // Implements swipe to delete
         val helper = ItemTouchHelper(
@@ -137,7 +134,7 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
                     }
                 })
 
-        helper.attachToRecyclerView(recyclerView)
+        helper.attachToRecyclerView(contact_list)
     }
 
     /**
@@ -153,9 +150,9 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
         val dialogView = LayoutInflater.from(this)
                 .inflate(R.layout.input_contact_dialog, null)
 
-        mFirstNameEdit = dialogView.findViewById(R.id.edittext_firstname)
-        mLastNameEdit = dialogView.findViewById(R.id.edittext_lastname)
-        mEmailEdit = dialogView.findViewById(R.id.edittext_email)
+        mFirstNameEdit = dialogView.edittext_firstname
+        mLastNameEdit = dialogView.edittext_lastname
+        mEmailEdit = dialogView.edittext_email
 
         // Listens to text changes to validate after each key press
         mFirstNameEdit.addTextChangedListener(this)
@@ -242,6 +239,16 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
             }
             R.id.action_generate -> {
                 generateContacts()
+                return true
+            }
+            R.id.action_sort_first -> {
+                mContacts.sortBy { it.firstName }
+                mAdapter.notifyDataSetChanged()
+                return true
+            }
+            R.id.action_sort_last -> {
+                mContacts.sortBy { it.lastName }
+                mAdapter.notifyDataSetChanged()
                 return true
             }
         }
@@ -332,10 +339,8 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
      * text from member variables.
      */
     override fun afterTextChanged(editable: Editable) {
-        val firstNameValid = !mFirstNameEdit.text.toString().isEmpty()
-        val lastNameValid = !mLastNameEdit.text.toString().isEmpty()
-        val emailValid = Patterns.EMAIL_ADDRESS
-                .matcher(mEmailEdit.text).matches()
+        val notEmpty: (TextView) -> Boolean = { it.text.isNotEmpty() }
+        val isEmail: (TextView) -> Boolean = { Patterns.EMAIL_ADDRESS.matcher(it.text).matches() }
 
         val failIcon = ContextCompat.getDrawable(this,
                 R.drawable.ic_fail)
@@ -343,13 +348,15 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
                 R.drawable.ic_pass)
 
         mFirstNameEdit.setCompoundDrawablesWithIntrinsicBounds(null, null,
-                if (firstNameValid) passIcon else failIcon, null)
+                if (notEmpty(mFirstNameEdit)) passIcon else failIcon, null)
         mLastNameEdit.setCompoundDrawablesWithIntrinsicBounds(null, null,
-                if (lastNameValid) passIcon else failIcon, null)
+                if (notEmpty(mLastNameEdit)) passIcon else failIcon, null)
         mEmailEdit.setCompoundDrawablesWithIntrinsicBounds(null, null,
-                if (emailValid) passIcon else failIcon, null)
+                if (isEmail(mEmailEdit)) passIcon else failIcon, null)
 
-        mEntryValid = firstNameValid and lastNameValid and emailValid
+        mEntryValid = mFirstNameEdit.validateWith(passIcon, failIcon, notEmpty)
+                      mLastNameEdit.validateWith(passIcon, failIcon, notEmpty)
+                      mEmailEdit.validateWith(passIcon, failIcon, isEmail)
     }
 
     private inner class ContactsAdapter internal constructor(
@@ -375,8 +382,8 @@ class ContactsActivity : AppCompatActivity(), TextWatcher {
         }
 
         internal inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            var nameLabel: TextView = itemView.findViewById(R.id.textview_name)
-            var emailLabel: TextView = itemView.findViewById(R.id.textview_email)
+            var nameLabel  =  itemView.textview_name
+            var emailLabel = itemView.textview_email
 
             init {
                 itemView.setOnClickListener { showAddContactDialog(adapterPosition) }
