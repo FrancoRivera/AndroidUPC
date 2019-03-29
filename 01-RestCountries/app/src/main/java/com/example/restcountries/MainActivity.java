@@ -19,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     private MyRecyclerAdapter adapter;
     private List<String> countries = new ArrayList<>();
+    private List<String> codes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        adapter = new MyRecyclerAdapter(this, countries);
+        adapter = new MyRecyclerAdapter(this, countries, codes);
         RecyclerView recycler = findViewById(R.id.myRecyclerView);
         recycler.setLayoutManager(new LinearLayoutManager(this));
         recycler.setAdapter(adapter);
@@ -41,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             for (int i = 0; i < response.length(); i ++){
                                 countries.add(response.getJSONObject(i).getString("name").toString());
+                                codes.add(response.getJSONObject(i).getString("alpha2Code").toString());
                             }
                             adapter.setMiArreglo(countries);
+                            adapter.setCountryCodeArreglo(codes);
                             adapter.notifyDataSetChanged();
                         }
                         catch (Exception e){
