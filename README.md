@@ -6,7 +6,7 @@
 
 ![REST Countries Screenshot](00-docs/img/01.png)
 
-Lista los paises de RESTCountries API
+Lista los paises de RESTCountries API y CountryFlags.io
 
 ### 02 - Sample App 
 
@@ -40,10 +40,15 @@ App en Kotlin Demostrando flujo basico entre fragments
 
 [Codelab de Google - App Widgets](https://codelabs.developers.google.com/codelabs/advanced-android-training-widgets/)
 
+### 07 - My Address Book - CodeLab
+
+![App Widget Screenshot](00-docs/img/07.png)
+
+[Codelab de Google - My Address Book](https://codelabs.developers.google.com/codelabs/taking-advantage-of-kotlin/index.html)
+
 
 ## Colaboradores
 
-
-- Gonzalo Cirilo - [Github](https://github.com/GonzaloCirilo)
+- Gonzalo Cirilo - [GitHub](https://github.com/GonzaloCirilo)
 
 
