@@ -6,14 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc091b17-029f-43a3-8055-006bb2a47128" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/Extensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/ContactsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/ContactsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_contacts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_contacts.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fc091b17-029f-43a3-8055-006bb2a47128" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +29,7 @@
     <session id="1396248773">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -59,14 +53,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="15" />
-          <entry key="kt" value="2819" />
+          <entry key="kt" value="2972" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="15" />
-          <entry key="Kotlin" value="2819" />
+          <entry key="Kotlin" value="2972" />
           <entry key="XML" value="8" />
         </counts>
       </usages-collector>
@@ -83,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/ContactsActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="645">
-              <caret line="356" column="82" selection-start-line="356" selection-start-column="82" selection-end-line="356" selection-end-column="82" />
+              <caret line="356" column="18" selection-start-line="356" selection-start-column="18" selection-end-line="356" selection-end-column="18" />
               <folding>
                 <element signature="e#639#1778#0" expanded="true" />
                 <element signature="e#13906#14028#0" />
@@ -96,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/Extensions.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#43#146#0" expanded="true" />
               </folding>
@@ -2521,8 +2515,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/Contact.kt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_contacts.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/Extensions.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/ContactsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/Extensions.kt" />
       </list>
     </option>
   </component>
@@ -2731,23 +2725,23 @@
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/Extensions.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/ContactsActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="645">
+          <caret line="356" column="18" selection-start-line="356" selection-start-column="18" selection-end-line="356" selection-end-column="18" />
           <folding>
-            <element signature="e#43#146#0" expanded="true" />
+            <element signature="e#639#1778#0" expanded="true" />
+            <element signature="e#13906#14028#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/ContactsActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/myaddressbook/Extensions.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="356" column="82" selection-start-line="356" selection-start-column="82" selection-end-line="356" selection-end-column="82" />
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="e#639#1778#0" expanded="true" />
-            <element signature="e#13906#14028#0" />
+            <element signature="e#43#146#0" expanded="true" />
           </folding>
         </state>
       </provider>
