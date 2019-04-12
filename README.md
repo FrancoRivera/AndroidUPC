@@ -50,7 +50,9 @@ App en Kotlin Demostrando flujo basico entre fragments
 
 https://codelabs.developers.google.com/codelabs/watchface-kotlin/#0
 
-### 13 - Wear OS Navigation and Actions with Wear 2.0 - Kotlin
+### 13 - Wear Recycler View Example
+
+### 14 - Wear OS Navigation and Actions with Wear 2.0 - Kotlin
 
 [Codelab de Google - Nav Actions](https://codelabs.developers.google.com/codelabs/wear-nav-action/index.html)
 
