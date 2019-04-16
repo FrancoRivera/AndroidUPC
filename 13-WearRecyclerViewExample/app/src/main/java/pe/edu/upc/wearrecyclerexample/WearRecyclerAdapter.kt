@@ -3,7 +3,6 @@ package pe.edu.upc.wearrecyclerexample
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-import android.R
 import android.content.Context
 import android.view.View
 import android.widget.TextView
@@ -35,7 +34,7 @@ class WearRecyclerAdapter(context: Context, miArreglo: List<String>) :
         internal var myTextView: TextView
 
         init {
-            myTextView = itemView.findViewById(R.id.)
+            myTextView = country_name
         }
 
     }
