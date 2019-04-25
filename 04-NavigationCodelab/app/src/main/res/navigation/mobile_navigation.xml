@@ -83,11 +83,9 @@
         android:name="com.example.android.codelabs.navigation.SettingsFragment"
         android:label="settings_fragment"
         tools:layout="@layout/settings_fragment" />
-    <!-- TODO STEP 4 Create a new navigation destination pointing to SettingsFragment -->
-    <!--<fragment-->
-    <!--android:id="@+id/settings_dest"-->
-    <!--android:name="com.example.android.codelabs.navigation.SettingsFragment"-->
-    <!--android:label="@string/settings"-->
-    <!--tools:layout="@layout/settings_fragment" />-->
-    <!-- TODO END STEP 4 -->
+    <fragment
+    android:id="@+id/settings_dest"
+    android:name="com.example.android.codelabs.navigation.SettingsFragment"
+    android:label="@string/settings"
+    tools:layout="@layout/settings_fragment" />
 </navigation>

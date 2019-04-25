@@ -11,7 +11,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <!-- TODO Step 9.1 - Add an item for the settings fragment -->
     <item
         android:id="@+id/settings_dest"
